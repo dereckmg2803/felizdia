@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import "tailwindcss";
+
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.body {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button{
+  position:relative;
+  bottom: 60px;
+}
+.cookieleft {
+  display: flex;
+  position: absolute;  /* Se coloca encima de todo */
+  top: 43%;
+  left: 20%; 
+  z-index: 1000; 
+  width: 170px; 
+  height: auto;
+  pointer-events: none; /* Evita que interfiera con clics */
+}
+
+.cookieright {
+  position: absolute;  /* Se coloca encima de todo */
+  top: 42%;
+  left: 35%; 
+  z-index: 1000; 
+  width: 170px; 
+  height: auto;
+  pointer-events: none; /* Evita que interfiera con clics */
+}
+
+
+.galleta_container {
+  background-image: url('/public/hearth.png');
+  background-size: contain;
+  /* Asegura que el SVG se vea completo */
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  min-height: 270px;
+
+
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 250px;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.galleta_title {
+  font-size: 14px;
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  bottom: 40px;
+  width: 95%;
+  text-align: center;
+  position: relative;
+  color: #fbfbfb;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    color: #9c9c9c;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+  }
+}
+
+
+.galleta_text {
+  position: relative;
+  top: 22px;
+  font-size: 13px;
+ 
+  color: black;
+
+  transition: color 0.3s;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.galleta_text_subtitle{
+  position: relative;
+  bottom: 7px;
+}
+.app__phrase {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #2d3748;
+}
+
+.app__author {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #718096;
+}
+
+.app__btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: lightpink;
+  color: black;
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+.article{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 100px
+}
+@media (width >=425px) {
+  .cookieleft {
+    top: 34%;
+    left: 40%; 
+    width: 115px;
+  }
+  
+  .cookieright {
+    top: 32%;
+    left: 35%; 
+    width: 129px;
+  }
+  .galleta_text {
+   
+    position: relative;
+    font-size: 12px;
+    bottom: 40px;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    color: black;
+  
+    transition: color 0.3s;
+  
+    &:hover {
+      color: yellow;
+    }
+  }
+
+  .button{
+    position:relative;
+    bottom: 0px;
+  }
+}
+@media (width >=768px) {
+  .cookieleft {
+    top: 39%;
+    left: 40%; 
+    width: 200px;
+  }
+  
+  .cookieright {
+    top: 38%;
+    left: 50%; 
+    width: 200px;
+  }
+  .galleta_text {
+   
+    position: inherit;
+    font-size: 15px;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    color: black;
+  
+    transition: color 0.3s;
+  
+    &:hover {
+      color: white;
+    }
+  }
+
+  .galleta_container {
+    background-size: contain;
+    /* Asegura que el SVG se vea completo */
+    background-repeat: no-repeat;
+    background-position: center top;
+  
+    min-height: 200px;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
