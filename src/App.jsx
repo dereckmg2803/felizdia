@@ -6,7 +6,7 @@ import getRandomFromArr from './services/getRandomFromArr';
 import Phrase from './components/Phrase';
 import ButtonPhrase from './components/ButtonPhrase';
 import gsap from 'gsap';
-import { img1, img2, img3, img4, cookiesound, cookieleft, cookieright } from './assets';
+import { img1, img2, img3, img4, cookiesound, cookieleft, cookieright, carta } from './assets';
 import Title from './components/Title';
 import { Modal } from 'antd';
 
@@ -19,6 +19,8 @@ function App() {
   const [image, setImage] = useState(getRandomFromArr(images));
   const [clickCount, setClickCount] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isImageModalVisible, setIsImageModalVisible] = useState(false);
+
 
 
   // Refs para las animaciones
@@ -98,20 +100,34 @@ const handleChangePhrase = () => {
         <Phrase phraseRandom={phraseRandom} />
       </div>
       <ButtonPhrase handlePhrase={handleChangePhrase} />
-      <Modal
+    <Modal
   title="¡Felicidades!"
   open={isModalVisible}
   onOk={() => {
     setIsModalVisible(false);
-    setClickCount(0); // reinicia el contador si quieres
+    setIsImageModalVisible(true); // Mostrar segundo modal
+    setClickCount(0);
   }}
   onCancel={() => {
-    setIsModalVisible(true);
-    setClickCount(0); // opcional también
+    setIsModalVisible(true); // ocultar el modal correctamente
+    setClickCount(0);
   }}
 >
-  <p>¡Has recibido una sorpresa por ser el dia de las madres, presiona OK para reclamar!</p>
+  <p>¡Has recibido una sorpresa por ser el día de las madres, presiona OK para reclamar!</p>
 </Modal>
+<Modal
+  title="¡Viaje a bogota y medellin!"
+  open={isImageModalVisible}
+  footer={null}
+  onCancel={() => setIsImageModalVisible(false)}
+>
+  <img
+    src={carta}
+    alt="Carta del día de las madres"
+    style={{ width: '100%', borderRadius: '10px' }}
+  />
+</Modal>
+
 
     </>
   );
